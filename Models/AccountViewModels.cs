@@ -79,6 +79,16 @@ namespace TrashCollector.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        [Required]
+        [DataType(DataType.Custom)]
+        
+        [Display(Name ="AccountType")]
+        public string AccountType { get; set; }
+
+        [Required]
+        [Display(Name = "FirstName")]
+        public string FirstName { get; set; }
+         
     }
 
     public class ResetPasswordViewModel

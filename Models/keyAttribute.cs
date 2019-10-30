@@ -4,5 +4,6 @@ namespace TrashCollector.Models
 {
     internal class keyAttribute : Attribute
     {
+        
     }
 }
