@@ -10,7 +10,8 @@ namespace TrashCollector.Models
     public class ApplicationUser : IdentityUser
     {
         public DbSet <Customer> Customers { get; set; }
-        
+        public string FirstName { get; internal set; }
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
