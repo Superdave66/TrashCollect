@@ -49,8 +49,8 @@ namespace TrashCollector
                 }   
             }   
    
-            // creating Creating Manager role    
-            if (!roleManager.RoleExists("employee"))   
+            // creating Creating Employee role    
+            if (!roleManager.RoleExists("Employee"))   
             {   
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();   
                 role.Name = "Employee";   
@@ -58,7 +58,7 @@ namespace TrashCollector
    
             }
 
-            // creating Creating Employee role    
+            // creating Creating Customer role    
             if (!roleManager.RoleExists("Customer"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
