@@ -25,8 +25,9 @@ namespace TrashCollector.Models
         public DateTime? EndDate { get; set; }
 
         public DateTime? ExtraPickup {get; set;}
-       [ForeignKey("Userid")]
-       public string Userid { get; set; }
+       [ForeignKey( "Applicationid")]
+       public string Applicationid { get; set; }
+      
 
 
     }

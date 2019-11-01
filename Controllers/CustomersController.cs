@@ -47,13 +47,15 @@ namespace TrashCollector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FirstName,LastNAme,Adress,City,State,ZipCode,PickUpDate,Balance,Monthlycharge,PickupConfirmed,StartDate,EndDate")] Customer customer)
+        public ActionResult Create([Bind(Include = "ID,FirstName,LastNAme,Adress,City,State,ZipCode,PickUpDate,Balance,Monthlycharge,PickupConfirmed,StartDate,EndDate,")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 string currentUserId = User.Identity.GetUserId();
-                 assign currentUserId to our customer's new foreign k
-                db.Customers.Add(customer);
+                customer.Applicationid = currentUserId;
+
+;
+        db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
