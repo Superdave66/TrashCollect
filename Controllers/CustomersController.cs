@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -20,7 +21,7 @@ namespace TrashCollector.Controllers
             return View(db.Customers.ToList());
         }
 
-        // GET: Customers/Details/5
+        // GET: Customers/Details/51
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -50,6 +51,8 @@ namespace TrashCollector.Controllers
         {
             if (ModelState.IsValid)
             {
+                string currentUserId = User.Identity.GetUserId();
+                 assign currentUserId to our customer's new foreign k
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
